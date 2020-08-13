@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# in
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+files=("ftdetect/diff.vim" "syntax/diff.vim")
+for file in "${files[@]}"
+do
+	echo -ne "receiving ${file}...";
+	cp "$HOME/.vim/plugged/Vim-Folddiff/${file}" "${DIR}/../${file}" &&
+		echo -ne "success.\\n";
+done
+
